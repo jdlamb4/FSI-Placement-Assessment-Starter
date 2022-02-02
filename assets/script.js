@@ -28,6 +28,8 @@ const sugarPlusBtn = document.querySelector('#add-sugar')
 // selecting the element with an id of minus-gb
 const gbMinusBtn = document.querySelector('#minus-gb')
 
+const ccMinusBtn = document.querySelector('#minus-cc')
+
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -89,4 +91,24 @@ console.log('Sugar Sprinkle + button was clicked!')
 
 // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
 
+})
+
+gbMinusBtn.addEventListener('click', function(e) {
+    gb--
+    function updateGbQty(displayGbQuantity) {
+        let gbQty = document.querySelector('#qty-gb')
+        gbQty.innerHTML = displayGbQuantity
+    }
+    gbQty = gb
+    updateGbQty(gbQty)
+})
+
+ccMinusBtn.addEventListener('click', function(e) {
+    cc--
+    function updateGbQty(displayCcQuantity) {
+        let ccQty = document.querySelector('#qty-cc')
+        ccQty.innerHTML = displayCcQuantity
+    }
+    ccQty = cc
+    updateGbQty(ccQty)
 })
