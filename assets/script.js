@@ -10,7 +10,11 @@ let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
 
+let total = 0
+
 let gbQty = document.querySelector('#qty-gb')
+let ccQty = document.querySelector('#qty-cc')
+let sugarQty = document.querySelector('#qty-sugar')
 
 // selecting the element with an id of credit
 const credit = document.querySelector('#credit')
@@ -30,6 +34,8 @@ const gbMinusBtn = document.querySelector('#minus-gb')
 
 const ccMinusBtn = document.querySelector('#minus-cc')
 
+const sugarMinusBtn = document.querySelector('#minus-sugar')
+
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
@@ -44,6 +50,15 @@ gbPlusBtn.addEventListener('click', function(e) {
     }
     gbQty = gb
     updateGbQty(gbQty)
+
+    total++
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    
+    updateTotalQty(total)
+        
 
 
     
@@ -63,6 +78,13 @@ ccPlusBtn.addEventListener('click', function(e) {
     }
     ccQty = cc
     updateGbQty(ccQty)
+
+    total++
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    updateTotalQty(total)
 
 
     
@@ -84,6 +106,14 @@ sugarPlusBtn.addEventListener('click', function(e) {
     sugarQty = sugar
     updateGbQty(sugarQty)
 
+    total++
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    
+    updateTotalQty(total)
+
 
     
 // HINT: You can delete this console.log after you no longer need it!
@@ -101,6 +131,14 @@ gbMinusBtn.addEventListener('click', function(e) {
     }
     gbQty = gb
     updateGbQty(gbQty)
+
+    total--
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    
+    updateTotalQty(total)
 })
 
 ccMinusBtn.addEventListener('click', function(e) {
@@ -111,4 +149,32 @@ ccMinusBtn.addEventListener('click', function(e) {
     }
     ccQty = cc
     updateGbQty(ccQty)
+
+    total--
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    
+    updateTotalQty(total)
 })
+
+sugarMinusBtn.addEventListener('click', function(e) {
+    sugar--
+    function updateSugarQty(displaySugarQuantity) {
+        let sugarQty = document.querySelector('#qty-sugar')
+        sugarQty.innerHTML = displaySugarQuantity
+    }
+    sugarQty = sugar
+    updateSugarQty(sugarQty)
+
+    total--
+    function updateTotalQty(displayTotalyQuantity) {
+        let totalQty = document.querySelector('#qty-total')
+        totalQty.innerHTML = displayTotalyQuantity
+    }
+    
+    updateTotalQty(total)
+})
+
+
