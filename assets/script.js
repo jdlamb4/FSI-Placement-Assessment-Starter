@@ -20,6 +20,10 @@ const gbPlusBtn = document.querySelector('#add-gb')
 // selecting the element with an id of add-cc
 const ccPlusBtn = document.querySelector('#add-cc')
 
+// selecting the element with an id of add-sugar
+const sugarPlusBtn = document.querySelector('#add-sugar')
+
+
 
 // selecting the element with an id of minus-gb
 const gbMinusBtn = document.querySelector('#minus-gb')
@@ -47,6 +51,7 @@ console.log('Gingerbread + button was clicked!')
 // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
 
 })
+
 ccPlusBtn.addEventListener('click', function(e) {
     cc++
     // gb = gb + document.querySelector('#qty-gb')
@@ -66,3 +71,22 @@ console.log('Chocolate Chip + button was clicked!')
 
 })
 // TODO: Hook up event listeners for the rest of the buttons
+
+sugarPlusBtn.addEventListener('click', function(e) {
+    sugar++
+    // gb = gb + document.querySelector('#qty-gb')
+    function updateGbQty(displaySugarQuantity) {
+        let sugarQty = document.querySelector('#qty-sugar')
+        sugarQty.innerHTML = displaySugarQuantity
+    }
+    sugarQty = sugar
+    updateGbQty(sugarQty)
+
+
+    
+// HINT: You can delete this console.log after you no longer need it!
+console.log('Sugar Sprinkle + button was clicked!')
+
+// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+
+})
