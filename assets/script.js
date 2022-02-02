@@ -17,6 +17,9 @@ const credit = document.querySelector('#credit')
 // selecting the element with an id of add-gb
 const gbPlusBtn = document.querySelector('#add-gb')
 
+// selecting the element with an id of add-cc
+const ccPlusBtn = document.querySelector('#add-cc')
+
 
 // selecting the element with an id of minus-gb
 const gbMinusBtn = document.querySelector('#minus-gb')
@@ -29,9 +32,9 @@ credit.textContent = `Created by ${yourName}`
 gbPlusBtn.addEventListener('click', function(e) {
     gb++
     // gb = gb + document.querySelector('#qty-gb')
-    function updateGbQty(displayQuantity) {
+    function updateGbQty(displayGbQuantity) {
         let gbQty = document.querySelector('#qty-gb')
-        gbQty.innerHTML = displayQuantity
+        gbQty.innerHTML = displayGbQuantity
     }
     gbQty = gb
     updateGbQty(gbQty)
@@ -41,9 +44,25 @@ gbPlusBtn.addEventListener('click', function(e) {
 // HINT: You can delete this console.log after you no longer need it!
 console.log('Gingerbread + button was clicked!')
 
+// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+
+})
+ccPlusBtn.addEventListener('click', function(e) {
+    cc++
+    // gb = gb + document.querySelector('#qty-gb')
+    function updateGbQty(displayCcQuantity) {
+        let ccQty = document.querySelector('#qty-cc')
+        ccQty.innerHTML = displayCcQuantity
+    }
+    ccQty = cc
+    updateGbQty(ccQty)
+
+
+    
+// HINT: You can delete this console.log after you no longer need it!
+console.log('Chocolate Chip + button was clicked!')
 
 // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
 
 })
-
 // TODO: Hook up event listeners for the rest of the buttons
