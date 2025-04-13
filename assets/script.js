@@ -8,10 +8,17 @@ let gb = 0; // Gingerbread
 let cc = 0; // Chocolate Chip
 let sugar = 0; // Sugar Sprinkle
 
+let total = 0;
+function updateTotal(displayTotal) {
+  let totalQty = document.querySelector("#qty-total");
+  totalQty.textContent = displayTotal;
+}
+
 // selecting the element with an id of credit
 const credit = document.querySelector("#credit");
 // selecting the element with an id of add-gb
 const gbPlusBtn = document.querySelector("#add-gb");
+const gbMinutBtn = document.querySelector("#minus-gb");
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`;
@@ -26,11 +33,27 @@ gbPlusBtn.addEventListener("click", function () {
     gbQty.textContent = displayQuantity;
   }
   gbQty = gb;
-  updateGb(
-    gbQty
-  ); /* I believe I don't need to do string interpolation because this ID is a number*/
+
+  /* I believe I don't need to do string interpolation because this ID is a number*/
+  updateGb(gbQty);
+  total = gb + cc + sugar;
+  updateTotal(total);
 
   // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+});
+
+gbMinutBtn.addEventListener("click", function () {
+  if (gb > 0) {
+    gb--;
+    function updateGb(displayQuantity) {
+      let gbQty = document.querySelector("#qty-gb");
+      gbQty.textContent = displayQuantity;
+    }
+    gbQty = gb;
+    updateGb(gbQty);
+    total = gb + cc + sugar;
+    updateTotal(total);
+  }
 });
 
 // TODO: Hook up event listeners for the rest of the buttons
