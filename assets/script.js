@@ -57,3 +57,59 @@ gbMinutBtn.addEventListener("click", function () {
 });
 
 // TODO: Hook up event listeners for the rest of the buttons
+
+const ccPlusBtn = document.querySelector("#add-cc");
+const ccMinusBtn = document.querySelector("#minus-cc");
+
+ccPlusBtn.addEventListener("click", function () {
+  cc++;
+  function updateCc(displayQuantity) {
+    let ccQty = document.querySelector("#qty-cc");
+    ccQty.textContent = displayQuantity;
+  }
+  ccQty = cc;
+  updateCc(ccQty);
+  total = gb + cc + sugar;
+  updateTotal(total);
+});
+
+ccMinusBtn.addEventListener("click", function () {
+  cc--;
+  function updateCc(displayQuantity) {
+    let ccQty = document.querySelector("#qty-cc");
+    ccQty.textContent = displayQuantity;
+  }
+  ccQty = cc;
+  updateCc(ccQty);
+  total = gb + cc + sugar;
+  updateTotal(total);
+});
+
+const sugarPlusBtn = document.querySelector("#add-sugar");
+const sugarMinusBtn = document.querySelector("#minus-sugar");
+
+sugarPlusBtn.addEventListener("click", function () {
+  sugar++;
+  function updateSugar(displayQuantity) {
+    let sugarQty = document.querySelector("#qty-sugar");
+    sugarQty.textContent = displayQuantity;
+  }
+  sugarQty = sugar;
+  updateSugar(sugarQty);
+  total = gb + cc + sugar;
+  updateTotal(total);
+});
+
+sugarMinusBtn.addEventListener("click", function () {
+  if (sugar > 0) {
+    sugar--;
+    function updateSugar(displayQuantity) {
+      let sugarQty = document.querySelector("#qty-sugar");
+      sugarQty.textContent = displayQuantity;
+    }
+    sugarQty = sugar;
+    updateSugar(sugarQty);
+    total = gb + cc + sugar;
+    updateTotal(total);
+  }
+});
