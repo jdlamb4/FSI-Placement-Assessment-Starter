@@ -74,15 +74,17 @@ ccPlusBtn.addEventListener("click", function () {
 });
 
 ccMinusBtn.addEventListener("click", function () {
-  cc--;
-  function updateCc(displayQuantity) {
-    let ccQty = document.querySelector("#qty-cc");
-    ccQty.textContent = displayQuantity;
+  if (cc > 0) {
+    cc--;
+    function updateCc(displayQuantity) {
+      let ccQty = document.querySelector("#qty-cc");
+      ccQty.textContent = displayQuantity;
+    }
+    ccQty = cc;
+    updateCc(ccQty);
+    total = gb + cc + sugar;
+    updateTotal(total);
   }
-  ccQty = cc;
-  updateCc(ccQty);
-  total = gb + cc + sugar;
-  updateTotal(total);
 });
 
 const sugarPlusBtn = document.querySelector("#add-sugar");
